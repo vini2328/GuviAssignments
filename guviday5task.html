@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guviday5task</title>
+</head>
+<body>
+    <script>
+// Do the below programs in anonymous function & IIFE
+// Print odd numbers in an array
+// Convert all the strings to title caps in a string array
+// Sum of all numbers in an array
+// Return all the prime numbers in an array
+// Return all the palindromes in an array
+// Return median of two sorted arrays of the same size.
+// Remove duplicates from an array
+// Rotate an array by k times
+
+var oddnumber = function(arr){
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!==0) console.log(arr[i])
+        
+    }
+}   
+oddnumber([1,2,3,4,5,6,7,8,9,])
+
+(function(arr){
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!==0) console.log(arr[i])
+        
+    }
+
+}) ([1,2,3,4,5,6,7,8,9,])
+
+// Convert all the strings to title caps in a string array
+
+
+var titlecase1=function(string){
+    var sen=string.toLowerCase().split(" ")
+    for(var i=0;i<sen.length;i++){
+        sen[i]=sen[i][0].toUpperCase()+sen[i].slice(1)
+    }
+    return sen.join(" ")
+}
+console.log(titlecase1("geek for guvi"))
+
+(function(string){
+        var sen=string.toLowerCase().split(" ")
+    for(var i=0;i<sen.length;i++){
+        sen[i]=sen[i][0].toUpperCase()+sen[i].slice(1)
+    }
+    console.log(sen.join(" "))
+
+}) ("geeks for guvi")
+
+var number = function(arr){
+    var sum=0
+    for(var i=0;i<arr.length;i++){
+        sum+=arr[i]
+        
+    }
+    return sum
+
+}   
+console.log(number([1,2,3,4,5,6,7,8,9,]))
+
+
+function isprime(n){
+    
+    if(n==1 || n==0){
+        return false;
+    }
+    for(let i=2;i<n;i++){
+        if(n%i==0) return false;
+        }
+        return true;
+    }
+let n=23;
+for(let i=0;i<=n;i++){
+    if(isprime(i))
+    console.log(i)
+}
+
+// anonymous version;
+let isprime= function (n){
+    
+    if(n==1 || n==0){
+        return false;
+    }
+    for(let i=2;i<n;i++){
+        if(n%i==0) return false;
+        }
+        return true;
+    }
+let n=23;
+for(let i=0;i<=n;i++){
+    if(isprime(i))
+    console.log(i)
+}
+// IIFE version
+
+(function(){
+    let isprime=function(n){
+    if(n==1 || n==0){
+        return false;
+    }
+    for(let i=2;i<n;i++){
+        if(n%i==0) return false;
+        }
+        return true;
+    }
+let n=23;
+for(let i=0;i<=n;i++){
+    if(isprime(i))
+    console.log(i)
+}
+    
+})()
+
+function vini(words){
+var arr = [];
+var str = words;
+var pal = str.toString().split("").reverse().join("").split(",");
+console.log(pal)
+
+for (let i = 0; i < words.length; i++) {
+  for (let k = 0; k < pal.length; k++) {
+    if (words[i] == pal[k]) {
+      arr.push(words[i])
+    }
+  }
+}
+return arr;
+}
+console.log(vini([1121, 'racecar', 'pineapple', 'porcupine', 'pineenip',2332]))
+
+// anonymous version;
+
+let vini=function (words){
+var arr = [];
+var str = words;
+var pal = str.toString().split("").reverse().join("").split(",");
+
+for (let i = 0; i < words.length; i++) {
+  for (let k = 0; k < pal.length; k++) {
+    if (words[i] == pal[k]) {
+      arr.push(words[i])
+    }
+  }
+}
+return arr;
+}
+console.log(vini([1121, 'racecar', 'pineapple', 'porcupine', 'pineenip',2332]))
+
+// IIFE version
+(function (words){
+var arr = [];
+var str = words;
+var pal = str.toString().split("").reverse().join("").split(",");
+
+for (let i = 0; i < words.length; i++) {
+  for (let k = 0; k < pal.length; k++) {
+    if (words[i] == pal[k]) {
+      arr.push(words[i])
+    }
+  }
+}
+console.log(arr)
+})
+ ([1121, 'racecar', 'pineapple', 'porcupine', 'pineenip',2332])
+
+// Return median of two sorted arrays of the same size.
+// anonymous function;
+var med=function(ar1,ar2,n){
+    var arr=(ar1.concat(ar2))
+    arr.sort(function(a,b) {return a-b})
+    
+    var a=(arr.length)/2
+    var b=a-1
+    var c=(arr[a]+arr[b])/2
+    return c;
+}
+console.log(med([1,2,3,4],[5,6,7,8]))
+
+// IIFE function
+(function(ar1,ar2,n){
+    var arr=(ar1.concat(ar2))
+    arr.sort(function(a,b) {return a-b})
+    
+    var a=(arr.length)/2
+    var b=a-1
+    var c=(arr[a]+arr[b])/2
+    console.log(c)
+})
+ ([1,2,3,4],[5,6,7,8])
+
+// Remove duplicates from an array
+var remove=function(arr){
+let uniquearr = [];
+for (let i = 0; i < arr.length; i++) {
+    let duplicate = false;
+    for (let j = 0; j < uniquearr.length; j++) {
+        if (arr[i] === uniquearr[j]) {
+            duplicate = true;
+            break;
+        }
+    }
+    if (!duplicate) {
+        uniquearr.push(arr[i])
+    }
+
+}
+return uniquearr
+}
+console.log(...(remove)([5,7,4,4,6,8]));
+
+// IIFE FUNCTION
+
+(function(arr){
+    let uniquearr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let duplicate = false;
+        for (let j = 0; j < uniquearr.length; j++) {
+            if (arr[i] === uniquearr[j]) {
+                duplicate = true;
+                break;
+            }
+        }
+        if (!duplicate) {
+            uniquearr.push(arr[i])
+        }
+       return uniquearr
+    }
+    console.log(...uniquearr)
+    })([5,7,4,4,6,8]);
+
+// Rotate an array by k times
+
+// anonymous function;
+const rotateArray1 = function(nums, k) {
+
+for (let i = 0; i < k; i++) {
+    nums.unshift(nums.pop()); 
+}
+return nums;
+}
+console.log(rotateArray1([12,32,41,51],3))
+
+// IIFE FUNCTION;
+(function(nums, k) {
+
+for (let i = 0; i < k; i++) {
+    nums.unshift(nums.pop());
+  
+
+}
+console.log(nums)
+})
+([12,32,41,51],3)
+
+// Do the below programs in arrow functions.
+// Print odd numbers in an array
+// Convert all the strings to title caps in a string array
+// Sum of all numbers in an array
+// Return all the prime numbers in an array
+// Return all the palindromes in an arr
+
+var oddnumber = (arr)=>{
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!==0) console.log(arr[i])
+        
+    }
+}   
+oddnumber([1,2,3,4,5,6,7,8,9,])
+
+var titlecase1=(string)=>{
+    var sen=string.toLowerCase().split(" ")
+    for(var i=0;i<sen.length;i++){
+        sen[i]=sen[i][0].toUpperCase()+sen[i].slice(1)
+    }
+    return sen.join(" ")
+}
+console.log(titlecase1("geek for guvi"))
+
+
+var number = (arr)=>{
+    var sum=0
+    for(var i=0;i<arr.length;i++){
+        sum+=arr[i]
+        
+    }
+    return sum
+
+}   
+console.log(number([1,2,3,4,5,6,7,8,9,]))
+
+let isprime=(n)=>{
+    
+    if(n==1 || n==0){
+        return false;
+    }
+    for(let i=2;i<n;i++){
+        if(n%i==0) return false;
+        }
+        return true;
+    }
+let n=23;
+for(let i=0;i<=n;i++){
+    if(isprime(i))
+    console.log(i)
+
+let vini=(words)=>{
+    var arr = [];
+    var str = words;
+    var pal = str.toString().split("").reverse().join("").split(",");
+    
+    for (let i = 0; i < words.length; i++) {
+      for (let k = 0; k < pal.length; k++) {
+        if (words[i] == pal[k]) {
+          arr.push(words[i])
+        }
+      }
+    }
+    return arr;
+    }
+    console.log(vini([1121, 'racecar', 'pineapple', 'porcupine', 'pineenip',2332]))
+
+
+
+  
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
