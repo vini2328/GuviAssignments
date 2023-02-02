@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1.The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+         // title, which is a String representing the title of the movie
+        // studio, which is a String representing the studio that made the movie
+        // rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+
+        class Movie{
+            constructor(title,studio,rating){
+                this.title=title;
+                this.studio=studio;
+                if(rating==null || rating==undefined){
+                    return this.rating="PG"
+                }else{
+                    return this.rating=rating
+                }
+ 
+            }
+            getpg(array){
+                console.log(array)
+                var result=[]
+                for(var i=0;i<array.length;i++){
+                    if(array[i].rating=="PG"){
+                        result.push(array[i])
+                    }
+                }
+                return result
+        }
+    }
+//     // a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+
+        var film=new Movie("Casino Royale","Eon production","UG")
+        console.log(film)
+
+//         // b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+
+        var film2=new Movie("Casino Royale","Eon production",)
+        console.log(film2)
+
+//         // d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+
+        
+        var film3=new Movie("Casino Royale","Eon production","pg13")
+        console.log(film3)
+        var film4=new Movie("Casino Royale","Eon production",)
+        console.log(film4)
+//         // c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+
+        var array=[film,film2,film3,film4]
+        console.log([film,film2,film3,film4])
+        console.log(film.getpg(array))
+
+
+//     // 2.Convert the UML diagram to Typescript class. - use number for double
+
+
+        class Circle {
+//     // constructor to assign initial values
+    constructor(radius, color) {
+      this.radius = radius
+      this.color = color
+    }
+  
+//     // returns radius of the circle
+    getRadius () {
+      return this.radius
+    }
+  
+//     // assigns new value to radius
+    setRadius (radius) {
+      this.radius = radius
+    }
+  
+//     // get color of the circle
+    getColor () {
+      return this.color
+    }
+    
+  
+//     // assigns new value to color
+    setColor (color) {
+      this.color = color
+    }
+    toString(){
+        return `Circle = [${this.radius,this.color}]`
+    }
+  
+//     // calculate area
+    getArea () {
+      return Math.PI * this.radius * this.radius
+    }
+  
+//     // calculate circumference
+    getCircumference () {
+      return 2 * Math.PI * this.radius;
+    }
+   }
+  
+   let myCircle = new Circle (1, 'RED',)
+   console.log(myCircle.getRadius())
+   console.log(myCircle.getColor())
+   console.log(myCircle.getArea())
+   console.log(myCircle.getCircumference())
+   console.log(myCircle.toString())
+
+  
+//    // after changing
+   myCircle.setColor('Blue')
+   myCircle.setRadius(2)
+   console.log(myCircle.getRadius())
+   console.log(myCircle.getColor())
+   console.log(myCircle.getArea())
+   console.log(myCircle.getCircumference())
+
+    //  3.Write a “person” class to hold all the details.
+       class Person{
+             constructor(age,color,name,height,gender){
+                this.name=name,
+                this.color=color,
+                this.age=age,
+                this.height=height
+                if(gender==null || gender==undefined){
+                    return this.gender="Unisex"
+                }else{
+                    return this.gender=gender
+                }
+        
+
+             }
+             getpg(array){
+             let result=[]
+             for(var i=0;i<array.length;i++){
+                if(array[i].gender=="female"){
+                    result.push(array[i])
+                }
+             }
+             return result
+            }
+             
+       }
+       var person1= new Person(45,"brown","radhe",5.7,"male")
+        console.log(person1)
+        var person2= new Person(34,"black","ram",4,)
+        console.log(person2)
+        var person3= new Person(23,"fair","kishore",6.7,)
+        console.log(person3)
+        var person4= new Person(67,"brown","rini",5.7,"female")
+        console.log(person4)
+        var person5= new Person(12,"brown","mahesh",5.7,"male")
+        console.log(person5)
+        var array=[person1,person2,person3,person4,person5]
+        console.log([person1,person2,person3,person4,person5])
+        console.log(person1.getpg(array))
+        person1.age=16
+        console.log(person1)
+
+        // 4.write a class to calculate the uber price.
+        class Uber{
+            constructor(baseprice=18,trip){
+                this.trip=trip,
+                this.baseprice=baseprice
+
+            }
+            getfare(){
+                let fare
+                return fare=`this fare is ${(this.trip)*(this.baseprice)}/-rs`
+            }
+        }
+        let s1= new Uber(25,10)
+        console.log(s1.getfare())
+      
+
+
+     </script>
+    
+</body>
+</html>
+
+
+
