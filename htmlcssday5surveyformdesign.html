@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        
+    }
+    span {
+        color: red;
+    }
+
+    .text1 {
+        font-size: smaller;
+        color: rgb(91, 90, 90);
+    }
+
+    .fname {
+        display: flex;
+        flex-direction: column;
+        font-weight: bolder;
+    }
+
+    .name {
+        width: 200px;
+    }
+
+    .names {
+        display: flex;
+    }
+
+    .lname {
+        margin-top: 17px;
+        margin-left: 23px;
+    }
+
+    .Ename {
+        width: 430px;
+
+    }
+
+    .vini {
+        margin-top: 14px;
+        font-weight: bolder;
+    }
+
+    .expo {
+        margin-top: 17px;
+        font-weight: bolder;
+    }
+
+    .vini1 {
+        color: #eeac82;
+        margin-top: 2px;
+
+
+    }
+
+    .more {
+        font-weight: bolder;
+        margin-bottom: 1px;
+        margin-top: 10px;
+    }
+
+    .table {
+        margin-left: 40px;
+        border: 1px solid black;
+        background-color: aqua;
+    }
+
+    table,
+    td,
+    th {
+        /* border:1px solid black; */
+        border-collapse: collapse;
+        padding: 8px;
+        text-align: center;
+
+
+
+    }
+
+    .grey {
+        background-color: #f1f1f1;
+    }
+
+    .bname{
+        width:99%;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="names">
+            <div class="fname">
+                <label for="name">Name<span>*</span></label>
+                <input type="text" class="name" />
+                <div class="text1">first</div>
+            </div>
+            <div class="lname">
+                <input type="text" class="name" />
+                <div class="text1">last</div>
+            </div>
+
+
+        </div>
+        <div class="Ename">
+            <div for="Ename" class="vini">Email<span>*</span></div>
+            <input type="email" class="Ename" />
+        </div>
+        <div class="expo">Your Experience<span>*</span></div>
+    </div class="star">
+    <i class="fa-solid fa-star vini1"></i>
+    <i class="fa-solid fa-star vini1"></i>
+    <i class="fa-solid fa-star vini1"></i>
+    <i class="fa-solid fa-star vini1"></i>
+    <i class="fa-solid fa-star vini1"></i>
+    <p>Overall,how would you rate your experience with us?</p>
+    </div>
+    <div class="more">How satisfied are you with<span>*</span></div>
+
+    <table style="width: 100%;">
+        <tr>
+            <th> </th>
+            <th>Very Unsatisfied </th>
+            <th>Unsatisfied </th>
+            <th>Neutral</th>
+            <th>satisfied </th>
+            <th>Very satisfied </th>
+
+        </tr>
+        <tr class="grey">
+            <td class="grey">Purchase</td>
+            <td>
+                <label for="abc"></label>
+                <input type="radio" id="abc" />
+            </td>
+            <td>
+                <label for="abc1"></label>
+                <input type="radio" id="abc1" />
+
+            </td>
+            <td>
+                <label for="abc2"></label>
+                <input type="radio" id="abc2" />
+
+            </td>
+            <td>
+                <label for="abc3"></label>
+                <input type="radio" id="abc3" />
+
+            </td>
+            <td>
+                <label for="abc4"></label>
+                <input type="radio" id="abc4" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>Service</td>
+
+            <td>
+                <label for="abc5"></label>
+                <input type="radio" id="abc5" />
+
+            </td>
+            <td>
+                <label for="abc6"></label>
+                <input type="radio" id="abc6" />
+
+            </td>
+            <td>
+                <label for="abc7"></label>
+                <input type="radio" id="abc7" />
+
+            </td>
+            <td>
+                <label for="abc8"></label>
+                <input type="radio" id="abc8" value="false" />
+
+            </td>
+            <td>
+                <label for="abc9"></label>
+                <input type="radio" id="abc9" />
+
+            </td>
+
+        </tr>
+        <tr class="grey">
+            <td class="grey">Company Overall</td>
+
+            <td>
+                <label for="abc10"></label>
+                <input type="radio" id="abc10" />
+
+            </td>
+            <td>
+                <label for="abc11"></label>
+                <input type="radio" id="abc11" />
+
+            </td>
+            <td>
+                <label for="abc12"></label>
+                <input type="radio" id="abc12" />
+            </td>
+            <td>
+                <label for="abc13"></label>
+                <input type="radio" id="abc13" />
+
+            </td>
+            <td>
+                <label for="abc14"></label>
+                <input type="radio" id="abc14" />
+
+            </td>
+        </tr>
+    </table>
+
+    <div class="more">How likely are you to<span>*</span></div>
+
+    <table style="width: 100%;">
+        <tr class="table1">
+            <th style="width:22%"> </th>
+            <th>Very Unlikely</th>
+            <th>Unlikely</th>
+            <th>Neutral</th>
+            <th>Likely</th>
+            <th>Very Likely</th>
+
+        </tr>
+        <tr class="grey">
+            <td class="grey">Buy from us again</td>
+            <td>
+                <label for="abc"></label>
+                <input type="radio" id="abc" />
+            </td>
+            <td>
+                <label for="abc1"></label>
+                <input type="radio" id="abc1" />
+
+            </td>
+            <td>
+                <label for="abc2"></label>
+                <input type="radio" id="abc2" />
+
+            </td>
+            <td>
+                <label for="abc3"></label>
+                <input type="radio" id="abc3" />
+
+            </td>
+            <td>
+                <label for="abc4"></label>
+                <input type="radio" id="abc4" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>Recommend our product to others</td>
+
+            <td>
+                <label for="abc5"></label>
+                <input type="radio" id="abc5" />
+
+            </td>
+            <td>
+                <label for="abc6"></label>
+                <input type="radio" id="abc6" />
+
+            </td>
+            <td>
+                <label for="abc7"></label>
+                <input type="radio" id="abc7" />
+
+            </td>
+            <td>
+                <label for="abc8"></label>
+                <input type="radio" id="abc8" value="false" />
+
+            </td>
+            <td>
+                <label for="abc9"></label>
+                <input type="radio" id="abc9" />
+
+            </td>
+
+        </tr>
+        <tr class="grey">
+            <td class="grey">Recommend our product to others</td>
+
+            <td>
+                <label for="abc10"></label>
+                <input type="radio" id="abc10" />
+
+            </td>
+            <td>
+                <label for="abc11"></label>
+                <input type="radio" id="abc11" />
+
+            </td>
+            <td>
+                <label for="abc12"></label>
+                <input type="radio" id="abc12" />
+            </td>
+            <td>
+                <label for="abc13"></label>
+                <input type="radio" id="abc13" />
+
+            </td>
+            <td>
+                <label for="abc14"></label>
+                <input type="radio" id="abc14" />
+
+            </td>
+        </tr>
+    </table>
+    <div class="bname">
+        <div  style="margin-bottom:5px"; for ="bname" class="vini">Additional comments or suggestion</div>
+        <input type="textarea" class="bname" />
+        <button>Submit</button>
+
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
