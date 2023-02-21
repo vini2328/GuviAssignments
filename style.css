@@ -1,0 +1,55 @@
+
+
+#buttons{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  color: white;
+}
+
+#pgNos{
+  display: flex;
+}
+#listingTable>div{
+  padding: 0.1rem;
+  text-align: center;
+  margin: 0.2rem;
+  background: #606c88;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    max-width: 400px;
+  width: 400px;
+  font: 1em sans-serif;
+  border: 1px solid white;
+  margin-top: 10px;
+  color: white;
+  
+}
+
+#listingTable{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+#pgNos button:focus{
+  background:#317bba;
+  color: white;
+}
+
+#page{
+  margin-top: 10px;
+}
+
+h1{
+  margin-top: 40px;
+}
+body{
+  background: #606c88;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   color: white;     
+}
