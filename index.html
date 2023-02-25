@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <script src="script.js">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather Forecast App by Vini</a>
+        </div>
+      </nav>
+       <div class="container w-25 mt-5 ">
+        <div class="input-group ">
+            <span class="input-group-text" id="basic-addon1">Enter the City</span>
+            <input value="" type="text"  id="Cityname"class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="d-grid gap-2 col-5 mx-auto mt-3">
+            <button class="btn btn-primary" onclick="Getweatherdata()" type="button">Submit</button>
+          </div>    
 
-    </script>
+       </div>
+       <div class="card mb-3 container mt-5 p-0" id="Weathercontainer" style="max-width: 540px;">
+          </div>
+        </div>
+      </div>
+      <script src="./script.js"></script>
 </body>
 </html>
