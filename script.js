@@ -1,63 +1,102 @@
-async function Getdata(){
-    let data=await fetch("https://restcountries.com/v3.1/all")
-    let res=await data.json()
-    let imgcard=document.getElementsByClassName("Imagecard")
-    var item=null
-    let doit=false
-    for(let i=0;i<res.length;i++){
-        console.log(res[i])
-        item = res[i].name.common
-        imgcard[0].innerHTML+=`
-        <div class="bg-dark text-white my-4 mx-4 text-center"style="width: 18rem; height:50%">
-            <span>${res[i].name.common}</span>
-            <div class="card"  style="width: 18rem ">
-                <img class="card-img-top "style="height: 160px" src=${res[i].flags.svg} alt="Card image cap" />
-                    <div class="card-body text-light bg-dark ">
-                        <h6 class="card-title">Capital: ${res[i].capital[0]}</h6>
-                        <h6 class="card-text">Region : ${res[i].region}</h6>
-                        <h6 class="card-title">Country Code: ${res[i].cca3}</h6> 
-                        <button onClick="Getweatherdata('${res[i].name.common}')" class="btn btn-secondary">Click for Weather</button>
-                     </div>
-            </div>
-        </div>`
+let url="https://makeup-api.herokuapp.com/api/v1/products.json"
+console.log('first')
+var conye=""
+function Clickbut(){
 
-        
+    let searchbar=document.getElementById("searchbar").value
+        console.log(searchbar,conye)
+        conye.filter((e)=>{
+           if( e.name == searchbar){
+                console.log(e)  
+                          
+           }
+        })
     }
-}Getdata()
+window.onload=function(){
+    let root=document.getElementById("root")
+    root.innerHTML=`
+    
+    <nav class="navbar bg-body-tertiary RG ">
+    <div class="container-fluid  ">
+      <span class="navbar-brand  h1 text-light ">Vini's Makeup App</span>
+      <form class="d-flex" role="search">
+        <input id="searchbar" class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+        <button  class="btn btn-outline-success vini"  onClick="Clickbut()" type="submit">Search</button>
+      </form>
 
-async function Getweatherdata(x){ 
-    let url=`https://api.openweathermap.org/data/2.5/weather?q=${x}&appid=f1dcc6f5ef0edd3a68267cb517ec20aa`
-    let data1= await fetch(url)
-    let res=await data1.json()
-    var Weathercontainer=document.getElementById("Weathercontainer")
-    //
-    document.getElementById("mySidenav").style.width = "550px";
-
-    Weathercontainer.innerHTML=`
-    <div class="container">
-    <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/3845/3845731.png" class="img-fluid rounded-startmp-0" alt="...">
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title m-0 mb-2 "><b>City name- ${x}</b></h5>
-        <p class="card-text m-0"><small class="text-muted">Temperature- ${res.main.temp}°K</small></p>
-        <p class="card-text m-0"><small class="text-muted">feels_like- ${res.main.feels_like}</small></p>
-        <p class="card-text m-0"><small class="text-muted">Description- ${res.weather[0].description}</small></p>
-        <p class="card-text m-0"><small class="text-muted">Degree- ${res.wind.deg}°</small></p>
-        <p class="card-text m-0"><small class="text-muted">Humidity- ${res.main.humidity}</small></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
+  </nav>
 `
 
-    
-    
+let root2=document.createElement("div")
+
+root2.innerHTML=`   <div class="container">
+        <marquee width="100%" direction="right" height="20px">
+        <b> Vini's Cosmetic products (930)</b> </marquee>                            
+         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                         <img src="https://media.glamour.com/photos/6241e4c57c7cafd1951d9741/master/pass/LuxuryMakeup.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img
+                                        src="https://reviewit.pk/wp-content/uploads/2019/09/Screen_Shot_2019-03-13_at_12.25.09_AM_1400x.progressive.png.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://hips.hearstapps.com/hmg-prod/images/veganbeautybrands-1639507302.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                    </div>
+                    <h4 class="vini2"><b>All Products</b></h4>
+                    
+                `
+root.append(root2)
+}
+async function getMakeupData(){
+    let data=await fetch(url)
+    let res=await data.json()
+    showbrands(res)
+    conye = res
+}getMakeupData()
+
+let Makeupdiv=document.getElementById('Makeupdiv')
+//console.log(mainMovieDiv)
+
+function showbrands(Makeup){
+    Makeup.map((ele)=>{
+        var Makeupdiv1=document.createElement("div")
+        Makeupdiv1.classList.add("col","Makeup")
+        Makeupdiv1.innerHTML=`            
+        <div class="col">
+            <div class="card h-75">
+                <img src="${ele.image_link}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Brand-${ele.brand}</h5>
+                    <h6>Name- ${ele.name}</h6>
+                    <h6>Price- $${ele.price}</h6>
+                    <a href="${ele.product_link}" target="_blank" attribute class="btn btn-primary vinbut">click to shop</a>
+                        <div class="overview">
+                        <p><b>Description</b></p>
+                        <p>${ele.description}</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+        
+`
+Makeupdiv.append(Makeupdiv1)
+    })
 
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  } 
+
