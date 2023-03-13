@@ -1,31 +1,27 @@
-
- function Getcatdata(){
-    var res=fetch('https://api.thecatapi.com/v1/images/search?limit=100&breed_ids=siam&api_key=%20live_JIk3SgnKlPawfaY7YEumcfgRhv8vQbECwApD7PQL6W3UlUvn3GfGRLn8XQmeY1ZQ')
+function GetPokedata(){
+    var res=fetch('https://fakerapi.it/api/v1/images?_quantity=50&?_locale=en_EN_type=pokemon&_height=300')
     
-    var res1=fetch('https://api.thecatapi.com/v1/images/search?limit=100&breed_ids=siam&api_key=%20live_JIk3SgnKlPawfaY7YEumcfgRhv8vQbECwApD7PQL6W3UlUvn3GfGRLn8XQmeY1ZQ')
+    // var res1=fetch('https://fakerapi.it/api/v1/images?_quantity=100&?_locale=en_EN_type=pokemon&_height=300')
     .then((res)=>{
         //console.log(res.json())
         return res.json()// converts into json and 
     }).then((data)=>{
-        for(let i=0;i<data.length;i++){
-            console.log(data[i])
-            let imgcard=document.getElementsByClassName("Imagecard")
+        var x=data.data
+        for(let i=0;i<x.length;i++){
+            console.log( "dd",x[i].url)
+            let imgcard=document.getElementsByClassName("imagecard")
+            console.log(imgcard)
             imgcard[0].innerHTML+=`
-            <div class="bg-dark text-white my-4 mx-4 text-center"style="width: 18rem; height:50%">
-            <span>${data[i].breeds[0]?.alt_names}</span>
-            <div class="card"  style="width: 18rem ">
-                    <img class="card-img-top "style="height: 160px" src=${data[i].url} alt="Card image cap" />
-                        <div class="card-body text-light bg-dark ">
-                         <h6 class="card-title">Life_span: ${data[i].breeds[0]?.life_span}</h6>
-                         <h6 class="card-text">Temperament : ${data[i].breeds[0].temperament}</h6>
-                         <h6 class="card-title"> affection_level: ${data[i].breeds[0]?.affection_level} </h6> 
-                         <a href="${data[i].breeds[0].cfa_url}" target="_blank" attribute class="btn btn-primary vinbut">click to know more about Cats</a>
-
-                        </div>
+            <div class="card imagecard" style="width: 18rem;">
+                <img src=${"https://lorempokemon.fakerapi.it/pokemon/600/800"} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${x[i].title}</h5>
+                    <p class="card-text">${x[i].description}</p>
                 </div>
-            </div>`
+            </div>
+        `
         }
-       })
+    })
         .catch(err=>console.log(err))
 
         // gives you to the value
@@ -34,11 +30,5 @@
 
         
     
-} Getcatdata()
-
-function clickme(){
-
-}
-
-    
+} GetPokedata()
 
