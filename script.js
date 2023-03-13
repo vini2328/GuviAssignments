@@ -1,37 +1,31 @@
 
-let imgcard=document.getElementsByClassName("Imagecard")
-imgcard[0].innerHTML=`<h2 class="text-light">please click on the below button to know more about Cats Facts</h2>`
-function Getcatfacts(){
-    var res=fetch('https://meowfacts.herokuapp.com/')
+ function Getcatdata(){
+    var res=fetch('https://api.thecatapi.com/v1/images/search?limit=100&breed_ids=siam&api_key=%20live_JIk3SgnKlPawfaY7YEumcfgRhv8vQbECwApD7PQL6W3UlUvn3GfGRLn8XQmeY1ZQ')
+    
+    var res1=fetch('https://api.thecatapi.com/v1/images/search?limit=100&breed_ids=siam&api_key=%20live_JIk3SgnKlPawfaY7YEumcfgRhv8vQbECwApD7PQL6W3UlUvn3GfGRLn8XQmeY1ZQ')
     .then((res)=>{
-        return res.json()
-        // converts into json and 
+        //console.log(res.json())
+        return res.json()// converts into json and 
     }).then((data)=>{
-        let x=data.data
-        for(let i=0;i<x.length;i++){
-            console.log(x[i])
-             let imgcard=document.getElementsByClassName("Imagecard")
-             console.log(imgcard)
-            imgcard[0].innerHTML=`
-            <div class="row ">
-            <div class="col-md-4">
-              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" class="rounded mx-auto d-block" alt="...">
-            </div>
-            <div class="col-md-5">
-              <div class="my-3">
-                <h5 class="card-title text-light"><b>Cats Facts</b></h5>
-                <p class="card-text text-light">${x[i]}</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
+        for(let i=0;i<data.length;i++){
+            console.log(data[i])
+            let imgcard=document.getElementsByClassName("Imagecard")
+            imgcard[0].innerHTML+=`
+            <div class="bg-dark text-white my-4 mx-4 text-center"style="width: 18rem; height:50%">
+            <span>${data[i].breeds[0]?.alt_names}</span>
+            <div class="card"  style="width: 18rem ">
+                    <img class="card-img-top "style="height: 160px" src=${data[i].url} alt="Card image cap" />
+                        <div class="card-body text-light bg-dark ">
+                         <h6 class="card-title">Life_span: ${data[i].breeds[0]?.life_span}</h6>
+                         <h6 class="card-text">Temperament : ${data[i].breeds[0].temperament}</h6>
+                         <h6 class="card-title"> affection_level: ${data[i].breeds[0]?.affection_level} </h6> 
+                         <a href="${data[i].breeds[0].cfa_url}" target="_blank" attribute class="btn btn-primary vinbut">click to know more about Cats</a>
+
+                        </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-      `
+            </div>`
         }
-        })
-        
-
+       })
         .catch(err=>console.log(err))
 
         // gives you to the value
@@ -40,4 +34,11 @@ function Getcatfacts(){
 
         
     
-} 
+} Getcatdata()
+
+function clickme(){
+
+}
+
+    
+
